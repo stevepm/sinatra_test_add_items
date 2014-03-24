@@ -20,4 +20,16 @@ feature 'Managing items' do
     expect(page).to have_content('Naan')
 
   end
+  scenario 'edit items' do
+    visit '/'
+    click_link 'Channa Masala'
+
+    find_field 'updated_name', 'Channa Masala'
+
+    fill_in 'updated_name', :with => 'hello'
+    click_on 'Update Item'
+
+    expect(page).to have_content('hello')
+
+  end
 end

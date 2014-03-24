@@ -1,5 +1,7 @@
-<a href="item/new">New Item</a>
-
-<% items.each do |item|%>
-<p><%= item %></p>
-<% end %>
+<a href="/item/new">New Item</a>
+<ul>
+  <% i = 1 %>
+  <% items.each do |item|%>
+    <li><a href="/items/<%= i %>"><%= item %></a></li>
+  <% end %>
+</ul>

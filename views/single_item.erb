@@ -1,0 +1,8 @@
+<form action="/item/edit" method="post">
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="updated_name" value="<%= item %>">
+  <input type="hidden" value="<%= id %>" name="id">
+  <input type="submit" value="Update Item">
+</form>
+
+<h3><a href="/">Go Home</a></h3>

@@ -17,4 +17,13 @@ class App < Sinatra::Base
     redirect '/'
   end
 
+  get '/items/:id' do
+    erb :single_item, :locals => { :item => settings.items[(params[:id].to_i)-1], :id => params[:id] }
+  end
+
+  post '/item/edit' do
+    settings.items[(params[:id].to_i)-1] = params[:updated_name]
+    redirect '/'
+  end
+
 end
